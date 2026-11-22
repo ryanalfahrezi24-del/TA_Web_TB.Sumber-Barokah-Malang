@@ -1,0 +1,364 @@
+/**
+ * ==============================================================================
+ * STYLESHEET HALAMAN KALKULATOR MATERIAL TB. SUMBER BAROKAH MALANG
+ * ==============================================================================
+ */
+
+/* ------------------------------------------------------------------------------
+ * 1. HEADER KALKULATOR
+ * ------------------------------------------------------------------------------ */
+.kalkulator-header {
+    background: linear-gradient(165deg, var(--light-bg) 0%, #FFFFFF 100%);
+    padding: 3.5rem 0 2.5rem 0;
+    border-bottom: 1px solid #F3F4F6;
+    text-align: center;
+}
+
+.kalkulator-header-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.kalkulator-header-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------------------
+ * 2. AREA UTAMA KALKULATOR
+ * ------------------------------------------------------------------------------ */
+.kalkulator-section {
+    padding: 3rem 0 5rem 0;
+    background-color: #FAFAFA;
+    min-height: 600px;
+}
+
+/* Kartu Form & Kartu Hasil */
+.kalkulator-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 20px rgba(31, 41, 55, 0.04);
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.kalkulator-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.kalkulator-card-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------------------------------------------------
+ * 3. PILIHAN JENIS PEKERJAAN (RADIO BERGAYA KARTU)
+ * ------------------------------------------------------------------------------ */
+.job-selector-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 576px) {
+    .job-selector-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.job-option {
+    position: relative;
+    cursor: pointer;
+}
+
+.job-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.job-card {
+    border: 2px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 1.1rem 0.5rem;
+    text-align: center;
+    background-color: #FFFFFF;
+    transition: all 0.25s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.job-card:hover {
+    border-color: rgba(245, 124, 0, 0.4);
+    background-color: #FFFDF9;
+}
+
+.job-icon {
+    font-size: 1.6rem;
+    color: #4B5563;
+    margin-bottom: 0.35rem;
+    transition: color 0.25s ease;
+}
+
+.job-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+/* Keadaan Radio Terpilih */
+.job-option input[type="radio"]:checked + .job-card {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+    box-shadow: 0 4px 14px rgba(245, 124, 0, 0.18);
+}
+
+.job-option input[type="radio"]:checked + .job-card .job-icon {
+    color: var(--primary-color);
+}
+
+.job-option input[type="radio"]:checked + .job-card .job-name {
+    color: var(--primary-hover);
+    font-weight: 700;
+}
+
+/* ------------------------------------------------------------------------------
+ * 4. INPUT FORM KALKULATOR
+ * ------------------------------------------------------------------------------ */
+.kalkulator-input-group .input-group-text {
+    background-color: #F9FAFB;
+    border: 1px solid #D1D5DB;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.kalkulator-input-group .form-control {
+    border: 1px solid #D1D5DB;
+    padding: 0.65rem 0.85rem;
+    font-size: 0.95rem;
+}
+
+.kalkulator-input-group .form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(245, 124, 0, 0.18);
+}
+
+.btn-hitung-kalkulator {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(245, 124, 0, 0.2);
+}
+
+.btn-hitung-kalkulator:hover {
+    background-color: var(--primary-hover);
+    color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------------------------
+ * 5. HASIL PERHITUNGAN & TABEL ESTIMASI
+ * ------------------------------------------------------------------------------ */
+/* Empty State Sebelum Dihitung */
+.hasil-empty-state {
+    text-align: center;
+    padding: 4.5rem 1.5rem;
+    margin: auto 0;
+}
+
+.hasil-empty-icon {
+    font-size: 3.5rem;
+    color: #D1D5DB;
+    margin-bottom: 1rem;
+}
+
+.hasil-empty-text {
+    font-size: 1rem;
+    color: var(--text-muted);
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* Kontainer Hasil Setelah Dihitung */
+.hasil-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.tabel-hasil-kalkulator {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.tabel-hasil-kalkulator thead th {
+    background-color: #F9FAFB;
+    color: #4B5563;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.85rem 0.75rem;
+    border-bottom: 1px solid #E5E7EB;
+    white-space: nowrap;
+}
+
+.tabel-hasil-kalkulator tbody td {
+    padding: 0.85rem 0.75rem;
+    font-size: 0.88rem;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.tabel-hasil-kalkulator tbody tr:hover {
+    background-color: #FFFDFB;
+}
+
+/* Checkbox Kustom di Tabel */
+.form-check-input-kalkulator {
+    cursor: pointer;
+    width: 1.15rem;
+    height: 1.15rem;
+}
+
+.form-check-input-kalkulator:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Status Badge di Tabel Hasil */
+.badge-kalkulator {
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    border-radius: 50rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    white-space: nowrap;
+}
+
+.badge-kalkulator-tersedia {
+    background-color: #DEF7EC;
+    color: #03543F;
+}
+
+.badge-kalkulator-kurang {
+    background-color: #FEF08A;
+    color: #713F12;
+}
+
+.badge-kalkulator-habis {
+    background-color: #FDE8E8;
+    color: #9B1C1C;
+}
+
+.badge-kalkulator-tidak-ada {
+    background-color: #F3F4F6;
+    color: #4B5563;
+}
+
+/* Box Total Estimasi */
+.total-estimasi-card {
+    background-color: var(--light-bg);
+    border-radius: 14px;
+    border: 1px solid #FED7AA;
+    padding: 1.15rem 1.4rem;
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total-estimasi-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin: 0;
+}
+
+.total-estimasi-nominal {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Tombol Masukkan ke Keranjang */
+.btn-keranjang-kalkulator {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 0.8rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 14px rgba(245, 124, 0, 0.25);
+    margin-top: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+}
+
+.btn-keranjang-kalkulator:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+    color: #FFFFFF;
+}
+
+.btn-keranjang-kalkulator:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    background-color: #9CA3AF;
+    box-shadow: none;
+}
+
+/* Catatan Kecil */
+.kalkulator-disclaimer {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.85rem;
+    text-align: center;
+}
+
+/* Responsif Mobile */
+@media (max-width: 575.98px) {
+    .job-selector-grid {
+        gap: 0.45rem;
+    }
+    .job-card {
+        padding: 0.85rem 0.25rem;
+    }
+    .job-icon {
+        font-size: 1.35rem;
+    }
+    .job-name {
+        font-size: 0.82rem;
+    }
+    .kalkulator-card {
+        padding: 1.35rem;
+    }
+}

@@ -1,0 +1,368 @@
+/**
+ * ==============================================================================
+ * STYLESHEET HALAMAN KERANJANG BELANJA TB. SUMBER BAROKAH MALANG
+ * ==============================================================================
+ */
+
+/* ------------------------------------------------------------------------------
+ * 1. HEADER KERANJANG
+ * ------------------------------------------------------------------------------ */
+.keranjang-header {
+    background: linear-gradient(165deg, var(--light-bg) 0%, #FFFFFF 100%);
+    padding: 3.5rem 0 2.5rem 0;
+    border-bottom: 1px solid #F3F4F6;
+    text-align: center;
+}
+
+.keranjang-header-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.keranjang-header-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------------------------
+ * 2. AREA UTAMA KERANJANG
+ * ------------------------------------------------------------------------------ */
+.keranjang-section {
+    padding: 3rem 0 5rem 0;
+    background-color: #FAFAFA;
+    min-height: 600px;
+}
+
+/* Kartu Daftar Item & Kartu Ringkasan */
+.keranjang-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 20px rgba(31, 41, 55, 0.04);
+    padding: 1.85rem;
+}
+
+.keranjang-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Tabel Item Keranjang */
+.tabel-keranjang {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.tabel-keranjang thead th {
+    background-color: #F9FAFB;
+    color: #4B5563;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 0.85rem;
+    border-bottom: 1px solid #E5E7EB;
+    white-space: nowrap;
+}
+
+.tabel-keranjang tbody td {
+    padding: 1rem 0.85rem;
+    font-size: 0.92rem;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+.tabel-keranjang tbody tr:hover {
+    background-color: #FFFDFB;
+}
+
+/* Lingkaran Ikon Material di Tabel */
+.keranjang-item-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+}
+
+/* Kontrol Jumlah (Quantity +/-) */
+.qty-control-group {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #D1D5DB;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+
+.btn-qty {
+    width: 32px;
+    height: 32px;
+    background-color: #F9FAFB;
+    border: none;
+    color: var(--dark-color);
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-qty:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.qty-input {
+    width: 48px;
+    height: 32px;
+    border: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark-color);
+    background-color: transparent;
+    -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Tombol Hapus Baris */
+.btn-hapus-item {
+    color: #DC2626;
+    background-color: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 8px;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.btn-hapus-item:hover {
+    color: #FFFFFF;
+    background-color: #DC2626;
+    border-color: #DC2626;
+}
+
+/* ------------------------------------------------------------------------------
+ * 3. KARTU RINGKASAN PESANAN
+ * ------------------------------------------------------------------------------ */
+.ringkasan-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    font-size: 0.92rem;
+    color: var(--text-muted);
+}
+
+.ringkasan-total-box {
+    background-color: var(--light-bg);
+    border: 1px solid #FED7AA;
+    border-radius: 14px;
+    padding: 1.15rem 1.25rem;
+    margin: 1.25rem 0 1.5rem 0;
+}
+
+.ringkasan-total-nominal {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.btn-checkout {
+    background-color: var(--primary-color);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 12px;
+    padding: 0.85rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 8px rgba(245, 124, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-checkout:hover {
+    background-color: var(--primary-hover);
+    color: #FFFFFF;
+}
+
+/* ------------------------------------------------------------------------------
+ * 4. EMPTY STATE (KERANJANG KOSONG)
+ * ------------------------------------------------------------------------------ */
+.keranjang-empty-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 20px rgba(31, 41, 55, 0.04);
+    padding: 4.5rem 1.5rem;
+    text-align: center;
+}
+
+.keranjang-empty-icon {
+    font-size: 4rem;
+    color: #D1D5DB;
+    margin-bottom: 1.25rem;
+}
+
+.keranjang-empty-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.keranjang-empty-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    max-width: 440px;
+    margin: 0 auto 2rem auto;
+}
+
+/* ------------------------------------------------------------------------------
+ * 5. PILIHAN METODE PENGAMBILAN / PENGIRIMAN (MODAL CHECKOUT)
+ * ------------------------------------------------------------------------------ */
+.metode-kirim-option {
+    cursor: pointer;
+    margin: 0;
+}
+
+.metode-kirim-option input[type="radio"] {
+    display: none;
+}
+
+.metode-kirim-card {
+    border: 1.5px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 0.65rem 0.75rem;
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #374151;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.metode-kirim-card:hover {
+    background-color: #F9FAFB;
+    border-color: #9CA3AF;
+}
+
+.metode-kirim-option input[type="radio"]:checked + .metode-kirim-card {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+/* ------------------------------------------------------------------------------
+ * 6. PILIHAN METODE PEMBAYARAN (TUNAI & TRANSFER BANK)
+ * ------------------------------------------------------------------------------ */
+.metode-bayar-option {
+    cursor: pointer;
+    margin: 0;
+}
+
+.metode-bayar-option input[type="radio"] {
+    display: none;
+}
+
+.metode-bayar-card {
+    border: 1.5px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 0.65rem 0.75rem;
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #374151;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.metode-bayar-card:hover {
+    background-color: #F9FAFB;
+    border-color: #9CA3AF;
+}
+
+.metode-bayar-option input[type="radio"]:checked + .metode-bayar-card {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.metode-subtransfer-card {
+    border: 1.5px solid #D1D5DB;
+    border-radius: 10px;
+    padding: 0.55rem 0.35rem;
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #374151;
+    font-size: 0.82rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.15rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.metode-subtransfer-card:hover {
+    background-color: #F9FAFB;
+    border-color: #9CA3AF;
+}
+
+.metode-bayar-option input[type="radio"]:checked + .metode-subtransfer-card {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.bank-rekening-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 0.55rem 0.75rem;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bank-rekening-card:hover {
+    border-color: #CBD5E1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
